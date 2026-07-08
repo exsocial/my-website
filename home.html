@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - exsocial</title>
-    <style>
+        <style>
         body { background-color: #050505; color: #ffffff; font-family: sans-serif; margin: 0; }
-        
-        /* Top Navigation Header */
         header { padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; }
         .logo { font-weight: bold; font-size: 1.5rem; }
+        .menu-btn { cursor: pointer; color: #fff; }
         
-        /* The Menu (Hamburger) */
-        .menu-btn { cursor: pointer; font-size: 1.2rem; color: #fff; }
-        
-        /* The Sidebar Menu (Hidden by default) */
-        .sidebar { height: 100%; width: 250px; position: fixed; top: 0; right: -250px; background: #111; border-left: 1px solid #333; transition: 0.3s; padding: 2rem; }
+        /* Fixed Sidebar Styles */
+        .sidebar { 
+            height: 100vh; 
+            width: 250px; 
+            position: fixed; 
+            top: 0; 
+            right: -250px; 
+            background: #050505; 
+            border-left: 1px solid #333; 
+            transition: 0.3s; 
+            padding: 2rem; 
+            z-index: 1000; 
+        }
         .sidebar.active { right: 0; }
-        .sidebar a { display: block; color: #fff; padding: 15px 0; text-decoration: none; font-size: 1.2rem; }
-        .sidebar .close-btn { cursor: pointer; margin-bottom: 2rem; color: #888; }
+        .sidebar a { display: block; color: #fff; padding: 15px 0; text-decoration: none; }
+        .sidebar .close-btn { cursor: pointer; color: #888; margin-bottom: 2rem; }
     </style>
-</head>
-<body>
 
-    <header>
-        <div class="logo">exsocial</div>
         <div class="menu-btn" onclick="toggleMenu()">☰ Menu</div>
     </header>
 
