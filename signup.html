@@ -9,7 +9,7 @@
         h1 { margin-bottom: 2rem; }
         form { display: flex; flex-direction: column; gap: 1rem; width: 300px; }
         input { padding: 12px; border-radius: 8px; border: 1px solid #333; background: #111; color: white; }
-        button { padding: 12px; border-radius: 8px; border: none; background: #fff; cursor: pointer; font-weight: bold; color: #000; font-size: 1rem; }
+        .btn-link { padding: 12px; border-radius: 8px; background: #fff; color: #000; font-weight: bold; text-align: center; cursor: pointer; text-decoration: none; display: block; }
         a { color: #888; text-decoration: none; margin-top: 1rem; font-size: 0.9rem; }
     </style>
 </head>
@@ -20,6 +20,10 @@
         <input type="email" placeholder="Email" required>
         <input type="password" placeholder="Create Password" required>
         <input type="password" placeholder="Retype Password" required>
-        <a href="home.html" style="text-decoration: none;">
-    <button type="button" style="width: 100%; cursor: pointer;">Sign Up</button>
-</a>
+        
+        <!-- This link acts as a button but won't trigger the password save popup -->
+        <a href="home.html" class="btn-link">Sign Up</a>
+    </form>
+    <a href="index.html">← Back to Home</a>
+</body>
+</html>
