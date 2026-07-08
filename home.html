@@ -5,28 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - exsocial</title>
     <style>
-        body { background-color: #050505; color: #ffffff; font-family: sans-serif; margin: 0; display: flex; flex-direction: column; height: 100vh; }
+        body { background-color: #050505; color: #ffffff; font-family: sans-serif; margin: 0; }
         
-        /* Top Navigation Bar */
-        nav { padding: 1rem 2rem; border-bottom: 1px solid #222; display: flex; justify-content: space-between; align-items: center; }
+        /* Top Navigation Header */
+        header { padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; }
         .logo { font-weight: bold; font-size: 1.5rem; }
         
-        /* Main Feed Area */
-        main { flex: 1; padding: 2rem; display: flex; justify-content: center; }
-        .feed-placeholder { border: 1px dashed #333; width: 100%; max-width: 600px; display: flex; align-items: center; justify-content: center; color: #666; border-radius: 8px; }
+        /* The Menu (Hamburger) */
+        .menu-btn { cursor: pointer; font-size: 1.2rem; color: #fff; }
         
-        /* Logout Link */
-        .logout { color: #888; text-decoration: none; font-size: 0.9rem; }
-        .logout:hover { color: #fff; }
+        /* The Sidebar Menu (Hidden by default) */
+        .sidebar { height: 100%; width: 250px; position: fixed; top: 0; right: -250px; background: #111; border-left: 1px solid #333; transition: 0.3s; padding: 2rem; }
+        .sidebar.active { right: 0; }
+        .sidebar a { display: block; color: #fff; padding: 15px 0; text-decoration: none; font-size: 1.2rem; }
+        .sidebar .close-btn { cursor: pointer; margin-bottom: 2rem; color: #888; }
     </style>
 </head>
 <body>
-    <nav>
+
+    <header>
         <div class="logo">exsocial</div>
-        <a href="index.html" class="logout">Logout</a>
-    </nav>
-    <main>
-        <div class="feed-placeholder">Your user feed will appear here.</div>
+        <div class="menu-btn" onclick="toggleMenu()">☰ Menu</div>
+    </header>
+
+    <div id="sidebar" class="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">✕ Close</div>
+        <a href="home.html">Home</a>
+        <a href="inbox.html">Inbox</a>
+        <a href="create.html">Make a Post</a>
+        <a href="briefs.html">Briefs</a>
+        <a href="orders.html">Manage Orders</a>
+        <a href="orders-list.html">Order Lists</a>
+        <a href="categories.html">Browse Categories</a>
+        <a href="profile.html">My Profile</a>
+    </div>
+
+    <main style="padding: 2rem;">
+        <h1>Dashboard</h1>
+        <p>Welcome back! Use the menu above to navigate.</p>
     </main>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
