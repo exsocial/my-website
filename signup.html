@@ -1,29 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account - exsocial</title>
-    <style>
-        body { background-color: #050505; color: #ffffff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        h1 { margin-bottom: 2rem; }
-        form { display: flex; flex-direction: column; gap: 1rem; width: 300px; }
-        input { padding: 12px; border-radius: 8px; border: 1px solid #333; background: #111; color: white; }
-        .btn-link { padding: 12px; border-radius: 8px; background: #fff; color: #000; font-weight: bold; text-align: center; cursor: pointer; text-decoration: none; display: block; }
-        a { color: #888; text-decoration: none; margin-top: 1rem; font-size: 0.9rem; }
-    </style>
-</head>
 <body>
     <h1>Create Account</h1>
-    <form>
+    <form id="signupForm">
+        <input type="hidden" id="accountType" name="accountType">
         <input type="text" placeholder="Username" required>
         <input type="email" placeholder="Email" required>
         <input type="password" placeholder="Create Password" required>
-        <input type="password" placeholder="Retype Password" required>
         
-        <!-- This link acts as a button but won't trigger the password save popup -->
-        <a href="home.html" class="btn-link">Sign Up</a>
+        <button type="submit" class="btn-link" id="submitBtn">Sign Up</button>
     </form>
-    <a href="index.html">← Back to Home</a>
+
+    <script>
+        // Get the type from the URL
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get('type');
+        document.getElementById('accountType').value = type;
+
+        // Logic to handle redirection based on account type
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (type === 'creator') {
+                alert("Redirecting to payment gateway for N20,000 fee...");
+                // Here you would link to your Payment Gateway (e.g., Paystack/Flutterwave)
+            } else {
+                window.location.href = "dashboard.html";
+            }
+        });
+    </script>
+    <a href="account-selection.html">← Back</a>
 </body>
-</html>
