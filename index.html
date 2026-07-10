@@ -5,80 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>exsocial</title>
     <style>
-        /* This resets default margins and sets up the black theme */
         body {
             margin: 0;
             padding: 0;
-            background-color: #050505; /* Deep black */
-            color: #ffffff; /* White text */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            
-            /* This centers everything perfectly on the screen */
+            background-color: #050505;
+            color: #ffffff;
+            font-family: sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh; 
+            height: 100vh;
         }
-
-        /* Styling for the website name */
-        h1 {
-            font-size: 4rem;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-
-        /* Container to keep buttons side-by-side */
-        .button-group {
-            display: flex;
-            gap: 1.5rem; /* Space between buttons */
-        }
-
-        /* Base styling for all buttons */
-        .btn {
-            padding: 12px 32px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease; /* Smooth hover effect */
-        }
-
-        /* Styling for the Login button (Outlined style) */
-        .btn-login {
-            background-color: transparent;
-            color: #ffffff;
-            border: 2px solid #ffffff;
-        }
-
-        .btn-login:hover {
-            background-color: #222222;
-        }
-
-        /* Styling for the Create Account button (Solid style) */
-        .btn-create {
-            background-color: #ffffff;
-            color: #000000;
-            border: 2px solid #ffffff;
-        }
-
-        .btn-create:hover {
-            background-color: #dddddd;
-            border-color: #dddddd;
-        }
+        h1 { font-size: 3rem; margin-bottom: 2rem; }
+        .button-group { display: flex; gap: 1rem; }
+        .btn { padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; }
+        .btn-login { border: 2px solid #fff; color: #fff; }
+        .btn-create { background: #fff; color: #000; border: 2px solid #fff; }
     </style>
 </head>
 <body>
-
     <h1>exsocial</h1>
-    
     <div class="button-group">
-    <a href="login.html" class="btn btn-login">Login</a>
-    <a href="signup.html" class="btn btn-create">Create Account</a>
-</div>
-
+        <a href="login.html" class="btn btn-login">Login</a>
+        <a href="account-selection.html" class="btn btn-create">Create Account</a>
+    </div>
 </body>
 </html>
-
